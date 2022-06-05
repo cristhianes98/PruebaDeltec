@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./Inicio_files/estilo01.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+</head>
+  
+  <body>
+
+    <style>
+     body {
+          height: 800px;
+          background-image: url("https://img.freepik.com/foto-gratis/interior-almacen-estanterias-llenas-productos_103577-4975.jpg?w=996");
+          background-size: cover;
+          background-repeat:no-repeat;
+          background-position: center center;
+          }
+
+        .contenedor{
+        margin: 50px;
+        margin-left: 350px;
+         }
+      
+      .titulo{
+        background:rgba(128, 128, 128,0.8);
+        text-align: center;
+        padding: 20px;
+      }
+      
+      h3
+      {font-size:250%;
+        color:white;
+      }
+      .ttabla{
+        padding: 10px;
+        text-align: center;
+        background: rgb(51, 149, 227);
+        color:black}
+        
+
+        table{
+          background-color:white;
+          border: 1px;
+        }
+
+    </style>
+
+    <div>
+    <h1 class="titulo">Sistemas De Gestion de Inventario</h1>
+    <div>
+      
+    <br>
+    
+    <div class="container">
+      
+        <h3>Listado de Recursos</h3>
+      
+      <a href="nuevapersona" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">Agregar Persona</a> 
+
+      <a href="nuevo_recurso" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">Agregar Recurso</a>
+
+            <a href="detalle_recurso" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">Listar Recursos</a>
+      
+    </div> 
+    <br>
+    
+      <div class="container"> 
+        <table class="table table-bordered table-hover " bgcolor= "white" border="1" class="contenedor">
+          <thead class="thead-dark">
+            <tr>
+              <th class="ttabla table-secondary">ID</th>
+              <th class="ttabla table-secondary">CATEGORIA</th>
+              <th class="ttabla table-secondary">CODIGO</th>
+              <th class="ttabla table-secondary">NOMBRE</th>
+              <th class="ttabla table-secondary">MARCA</th>
+              <th class="ttabla table-secondary">SERIE</th>
+              <th class="ttabla table-secondary"></th>
+              <th class="ttabla table-secondary"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for recurso in l_recursos %}
+            <tr>
+              <td class="ttabla">{{recurso.id}}</td>
+              <td class="ttabla">{{recurso.categoria}}</td>
+              <td class="ttabla">{{recurso.codigo}}</td>
+              <td class="ttabla">{{recurso.nombre}}</td>
+              <td class="ttabla">{{recurso.marca}}</td>
+              <td class="ttabla">{{recurso.serie}}</td>
+              <td ><a href="eliminar_recurso/{{recurso.id}}">Eliminar</a></td>
+              <td><a href="editar_recurso/{{recurso.id}}"> Editar</a></td>
+            </tr>
+            {% endfor%}
+                    
+          </tbody>
+        </table>
+      <div class="contenedorboton">
+          <a href="{% url 'index' %}" class="btn btn-secondary btn-lg borde" tabindex="-1" role="button" aria-disabled="true">Regresar a Inicio</a>
+
+        
+      </div>
+   </div>
+           
+
+      </div>
+    
+  </body>
+</html>

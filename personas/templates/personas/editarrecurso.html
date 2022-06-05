@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DetalleDePersona</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  
+  <body>
+
+<style>
+  
+  body {
+          height: 800px;
+          background-image: url("https://img.freepik.com/foto-gratis/retrato-sonriente-trabajador-almacen-tableta-pie-departamento-almacenamiento_342744-1465.jpg?t=st=1654282108~exp=1654282708~hmac=76f1ba9f3dfbc7f3646586e32ee7347505f9431800a8c599c3dcbf4ae1e31446&w=900");
+          background-size: cover;
+          background-repeat:no-repeat;
+          background-position: center center;
+  }
+  .titulo{
+        background:rgba(128, 128, 128,0.8);
+        text-align: center;
+        padding: 20px;
+      }
+  .contenedor{
+    
+    margin-left:400px;
+    margin-right:600px;
+    margin-top:100px;
+    
+  }
+  .contenedorboton{
+    
+    margin-left:400px;
+    margin-right:600px;
+    margin-top:30px;
+    display:inline-block;
+    
+  }
+   .letra
+  {
+    font-size:20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .registro{
+    background:#F3F6F9;
+    padding:20px;
+    text-align: center;
+    box-shadow:0px 3px 4px;
+
+  }
+
+  .borde{
+    border-radius: 5px;
+     box-shadow:0px 3px 4px black;
+    
+  }
+</style>
+
+    <div>
+    <h1 class="titulo">Sistemas De Gestion de Inventario</h1>
+    <div>
+    
+    
+    <div class="contenedor">
+      <form method='POST'>
+        <h1 class="registro borde " style="  font-family: Arial, Helvetica, sans-serif;" >Editar Recurso</h1>
+        <table class="table  table-borderless borde letra"  bgcolor= "#F3F6F9" >
+        {{formarecurso}}
+          </table>
+    </div>
+
+    <div class="contenedorboton">
+      <button type="submit" class="btn btn-secondary btn-lg borde">Guardar</button>
+    {% csrf_token %}
+    <a href="{% url 'index' %}" class="btn btn-secondary btn-lg borde" tabindex="-1" role="button" aria-disabled="true">Regresar a Inicio</a>
+      </div>
+
+    
+  </form>
+    
+  </body>
+</html>

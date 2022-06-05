@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RegistrarRecurso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+<style>
+  body {
+          height: 800px;
+          background-image: url("https://img.freepik.com/foto-gratis/trabajadores-almacen-que-utilizan-escaner-codigo-barras-tableta-controlan-inventario-mercancias_342744-1489.jpg?t=st=1654284555~exp=1654285155~hmac=56a5b81e96088dfa48c683659881b4d386214291ba1a6d5e35f3f936cc328afb&w=900");
+          background-size: cover;
+          background-repeat:no-repeat;
+          background-position: center center;
+  }
+  .titulo{
+        background:rgba(128, 128, 128,0.8);
+        text-align: center;
+        padding: 20px;
+      }
+  
+  .contenedor{
+    
+    margin-left:400px;
+    margin-right:600px;
+    margin-top:100px;
+    
+  }
+  .contenedorboton{
+    
+    margin-left:400px;
+    margin-right:600px;
+    margin-top:30px;
+    display:inline-block;
+    
+  }
+
+  .registro{
+    background:#F3F6F9;
+    padding:20px;
+    text-align: center;
+    box-shadow:0px 3px 4px;
+
+  }
+
+  .borde{
+    border-radius: 5px;
+     box-shadow:0px 3px 4px black;
+    
+    
+  }
+  .letra
+  {
+    font-size:20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+
+    <div>
+    <h1 class="titulo">Sistemas De Gestion de Inventario</h1>
+    <div>
+    
+    <div class="contenedor">
+      <form method='POST'>
+        <h1 class="registro borde "style="  font-family: Arial, Helvetica, sans-serif;" >Registrar Recurso</h1>
+        <table class="table  table-borderless borde letra"  bgcolor= "#F3F6F9" >
+        {{formarecurso}}
+          </table>
+        </div>
+
+    <div class="contenedorboton">
+      <button type="submit" class="btn btn-secondary btn-lg borde">Registrar</button>
+    {% csrf_token %}
+    <a href="{% url 'index' %}" class="btn btn-secondary btn-lg borde " tabindex="-1" role="button" aria-disabled="true">Regresar a Inicio</a>
+      </div>
+
+    
+  </form>
+    
+  </body>
+</html>
